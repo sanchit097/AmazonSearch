@@ -1,6 +1,5 @@
 package com.assignment.AmazonSearch.utilities;
 
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -31,17 +30,22 @@ public class WebDriverManager {
 
 	private WebDriver createDriver() {
 		switch (driverType) {
-		case CHROME:
+		case CHROME :
+
+			System.setProperty(CHROME_DRIVER_PROPERTY, getConfigReader().getDriverPath());
 			driver = new ChromeDriver();
-
-		case INTERNETEXPLORER:
+			break;
+		case INTERNETEXPLORER :
+			
 			driver = new InternetExplorerDriver();
-
-		case FIREFOX:
+			break;
+		case FIREFOX :
 			driver = new FirefoxDriver();
+			break;
 		default:
 			System.setProperty(CHROME_DRIVER_PROPERTY, getConfigReader().getDriverPath());
 			driver = new ChromeDriver();
+			break;
 		}
 
 		// for maximizing browser window to fit screen
