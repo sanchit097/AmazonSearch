@@ -12,7 +12,6 @@ import com.assignment.AmazonSearch.enums.DriverType;
 public class WebDriverManager {
 
 	private static WebDriver driver;
-
 	private static DriverType driverType;
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 	private static ConfigFileReader configReader;
