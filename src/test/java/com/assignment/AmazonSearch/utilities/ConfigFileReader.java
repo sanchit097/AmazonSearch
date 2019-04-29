@@ -28,7 +28,7 @@ public class ConfigFileReader {
 	}
 
 	public String getDriverPath() {
-		String driverPath = properties.getProperty("driverPath");
+		String driverPath = properties.getProperty("driverpath");
 		if (driverPath != null)
 			return driverPath;
 		else
