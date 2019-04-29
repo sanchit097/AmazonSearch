@@ -1,4 +1,5 @@
 #Author: sanchit_negi@yahoo.com
+@assignment
 Feature: Search from home page
   I want to search specific product from searchResult
 
@@ -12,8 +13,8 @@ Feature: Search from home page
     Given user search for "<keyword>" in searchbox
     When user sort it by "<sortingValue>"
     And select details "<resultOrder>" from list
-    Then "<expectedResult>" should be present
+    Then Product with keyword "<expectedResult>" should be present
 
     Examples: 
-      | keyword | sortingValue | resultOrder | expectedResult |
-      | Nikon   | high to low  |           2 | Nikon D3X      |
+      | keyword | sortingValue       | resultOrder | expectedResult |
+      | Nikon   | Price: High to Low |           2 | Nikon D3X      |
