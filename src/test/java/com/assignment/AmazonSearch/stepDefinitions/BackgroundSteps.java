@@ -13,30 +13,30 @@ import cucumber.api.java.en.When;
 
 public class BackgroundSteps {
 
-	WebDriver driver;
-	HomePageObj homepageObj;
-	PageObjectManager pageObjectManager;
-	TestContext context;
+    WebDriver driver;
+    HomePageObj homepageObj;
+    PageObjectManager pageObjectManager;
+    TestContext context;
 
-	public BackgroundSteps(TestContext context) {
-		this.context = context;
-		pageObjectManager = context.getPageObjectManager();
-		homepageObj = pageObjectManager.getHomePageObj();
-	}
-	
-	@Given("^I open the web browser$")
-	public void i_open_the_web_browser() throws Exception {
-		driver = new WebDriverManager().getDriver();
-	}
-	
-	@When("^I enter url$")
-	public void i_enter_url(List<String> url) throws Exception {
-		driver.get(url.get(0));
-	}
-	
-	@Then("^I should be navigated to homepage$")
-	public void i_should_be_navigated_to_homepage() throws Exception {
-		assertTrue(homepageObj.checkHomePage());
-	}
+    public BackgroundSteps(TestContext context) {
+	this.context = context;
+	pageObjectManager = context.getPageObjectManager();
+	homepageObj = pageObjectManager.getHomePageObj();
+    }
+
+    @Given("^I open the web browser$")
+    public void i_open_the_web_browser() throws Exception {
+	driver = new WebDriverManager().getDriver();
+    }
+
+    @When("^I enter url$")
+    public void i_enter_url(List<String> url) throws Exception {
+	driver.get(url.get(0));
+    }
+
+    @Then("^I should be navigated to homepage$")
+    public void i_should_be_navigated_to_homepage() throws Exception {
+	assertTrue(homepageObj.checkHomePage());
+    }
 
 }

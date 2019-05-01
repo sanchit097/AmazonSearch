@@ -9,42 +9,41 @@ import java.util.Properties;
 import com.assignment.AmazonSearch.enums.DriverType;
 
 public class ConfigFileReader {
-	private Properties properties;
-	private final String propertyFilePath = "Resources/config/config.properties";
-	
+    private Properties properties;
+    private final String propertyFilePath = "Resources/config/config.properties";
 
-	public ConfigFileReader() {
-		BufferedReader reader;
-		try {
-			reader = new BufferedReader(new FileReader(propertyFilePath));
-			properties = new Properties();
-			properties.load(reader);
-			reader.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    public ConfigFileReader() {
+	BufferedReader reader;
+	try {
+	    reader = new BufferedReader(new FileReader(propertyFilePath));
+	    properties = new Properties();
+	    properties.load(reader);
+	    reader.close();
+	} catch (FileNotFoundException e) {
+	    e.printStackTrace();
+	} catch (IOException e) {
+	    e.printStackTrace();
 	}
+    }
 
-	public String getDriverPath() {
-		String driverPath = properties.getProperty("driverpath");
-		if (driverPath != null)
-			return driverPath;
-		else
-			throw new RuntimeException("Driverpath not specified in the Config.properties file");
-	}
-	
-	public DriverType getBrowserType() {
-		String browser = properties.getProperty("browser");
-		if (browser == null || browser.equalsIgnoreCase("chrome"))
-			return DriverType.CHROME;
-		else if(browser == null || browser.equalsIgnoreCase("internetexplorer"))
-			return DriverType.INTERNETEXPLORER;
-		else  if (browser == null || browser.equalsIgnoreCase("firefox"))
-			return DriverType.FIREFOX;
-		else
-			throw new RuntimeException("Driverpath not specified in the Config.properties file");
-	}
-	
+    public String getDriverPath() {
+	String driverPath = properties.getProperty("driverpath");
+	if (driverPath != null)
+	    return driverPath;
+	else
+	    throw new RuntimeException("Driverpath not specified in the Config.properties file");
+    }
+
+    public DriverType getBrowserType() {
+	String browser = properties.getProperty("browser");
+	if (browser == null || browser.equalsIgnoreCase("chrome"))
+	    return DriverType.CHROME;
+	else if (browser == null || browser.equalsIgnoreCase("internetexplorer"))
+	    return DriverType.INTERNETEXPLORER;
+	else if (browser == null || browser.equalsIgnoreCase("firefox"))
+	    return DriverType.FIREFOX;
+	else
+	    throw new RuntimeException("Driverpath not specified in the Config.properties file");
+    }
+
 }

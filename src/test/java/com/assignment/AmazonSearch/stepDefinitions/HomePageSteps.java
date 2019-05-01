@@ -14,35 +14,35 @@ import cucumber.api.java.en.When;
 
 public class HomePageSteps {
 
-	WebDriver driver;
-	HomePageObj homepageObj;
-	PageObjectManager pageObjectManager;
-	TestContext context;
-	
-	public HomePageSteps(TestContext context) {
-		pageObjectManager = context.getPageObjectManager();
-		homepageObj = pageObjectManager.getHomePageObj();
-	}
+    WebDriver driver;
+    HomePageObj homepageObj;
+    PageObjectManager pageObjectManager;
+    TestContext context;
 
-	@Given("^user search for \"([^\"]*)\" in searchbox$")
-	public void user_search_for_in_searchbox(String keyword) throws Exception {
-		homepageObj.enterSearchTxt(keyword);
-		homepageObj.clickSearchBtn();
-	}
+    public HomePageSteps(TestContext context) {
+	pageObjectManager = context.getPageObjectManager();
+	homepageObj = pageObjectManager.getHomePageObj();
+    }
 
-	@When("^user sort it by \"([^\"]*)\"$")
-	public void user_sort_it_by(String sortingOptn) throws Exception {
-		homepageObj.sortResultbyOption(sortingOptn);
-	}
+    @Given("^user search for \"([^\"]*)\" in searchbox$")
+    public void user_search_for_in_searchbox(String keyword) throws Exception {
+	homepageObj.enterSearchTxt(keyword);
+	homepageObj.clickSearchBtn();
+    }
 
-	@When("^select details \"([^\"]*)\" from list$")
-	public void select_details_from_list(int index) throws Exception {
-		homepageObj.clickProductWithIndex(index);
-	}
+    @When("^user sort it by \"([^\"]*)\"$")
+    public void user_sort_it_by(String sortingOptn) throws Exception {
+	homepageObj.sortResultbyOption(sortingOptn);
+    }
 
-	@Then("^Product with keyword \"([^\"]*)\" should be present$")
-	public void product_with_key_should_be_present(String titleKeyWord) throws Exception {
-		assertTrue(homepageObj.checkProductTitleContains(titleKeyWord));
-	}
+    @When("^select details \"([^\"]*)\" from list$")
+    public void select_details_from_list(int index) throws Exception {
+	homepageObj.clickProductWithIndex(index);
+    }
+
+    @Then("^Product with keyword \"([^\"]*)\" should be present$")
+    public void product_with_key_should_be_present(String titleKeyWord) throws Exception {
+	assertTrue(homepageObj.checkProductTitleContains(titleKeyWord));
+    }
 
 }
