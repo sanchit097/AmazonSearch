@@ -63,4 +63,10 @@ public class WebDriverManager {
 
 	return (configReader == null) ? new ConfigFileReader() : configReader;
     }
+    
+    public void closeDriver() throws Exception {
+	driver.quit();
+	Thread.sleep(2000);
+	driver=null;
+    }
 }

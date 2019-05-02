@@ -10,7 +10,7 @@ import com.assignment.AmazonSearch.enums.DriverType;
 
 public class ConfigFileReader {
     private Properties properties;
-    private final String propertyFilePath = "Resources/config/config.properties";
+    private final String propertyFilePath = "resources/configuration/config.properties";
 
     public ConfigFileReader() {
 	BufferedReader reader;
@@ -27,7 +27,7 @@ public class ConfigFileReader {
     }
 
     public String getDriverPath() {
-	String driverPath = properties.getProperty("driverpath");
+	String driverPath = properties.getProperty("driverPath");
 	if (driverPath != null)
 	    return driverPath;
 	else

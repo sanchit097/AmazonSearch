@@ -6,8 +6,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "Resources/features" }, glue = "com/assignment/AmazonSearch/stepDefinitions", tags = {
-	"@assignment" }, plugin = { "pretty", "html:target/cucumber" })
+@CucumberOptions(features = { "resources/features" }, glue = "com/assignment/AmazonSearch/stepDefinitions", tags = {
+	"@assignment" }, plugin = { "pretty", "html:target/cucumber" }, monochrome = true)
 public class TestRunner {
+
 
 }

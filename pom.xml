@@ -8,9 +8,6 @@
 
 	<name>AmazonSearch</name>
 	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 		<!-- junit -->
@@ -93,7 +90,6 @@
 			<artifactId>cucumber-reporting</artifactId>
 			<version>3.16.0</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>

@@ -1,1 +1,7 @@
 /target/
+/.project
+/.classpath
+/.Logfile.log
+/.gitignore
+/.metadata/
+/.settings/
