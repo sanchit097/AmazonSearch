@@ -11,15 +11,15 @@ This is a test automation project, where the system search for the product by th
 
 1. git clone https://github.com/sanchit097/amazon-search.git
 
-2. inside project go to amazon-search/resources/configuration/config.property
+2. Inside project go to amazon-search/resources/configuration/config.property
 
-3.Provide the absolute driverPath example:'c:/drivers/chromeDriver.exe'(by default it will take the chrome driver path from project). 
+3. Provide the absolute driverPath example:'c:/drivers/chromeDriver.exe'(by default it will take the chrome driver path from project). 
 
-4.Provide the browser type in config.property file (chrome,firefox,internetexplorer).Default chrome is are selected.
+4. Provide the browser type in config.property file (chrome,firefox,internetexplorer).Default chrome is are selected.
 
 #Running the tests:
 
-1. cd amazon-search
+1. goto amazon-search folder
 2. mvn clean test
 
 #Test Result:
