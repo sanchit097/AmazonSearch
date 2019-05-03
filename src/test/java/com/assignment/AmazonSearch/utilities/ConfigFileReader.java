@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.assignment.AmazonSearch.enums.DriverType;
 
 public class ConfigFileReader {
@@ -13,9 +15,8 @@ public class ConfigFileReader {
     private final String propertyFilePath = "resources/configuration/config.properties";
 
     public ConfigFileReader() {
-	BufferedReader reader;
-	try {
-	    reader = new BufferedReader(new FileReader(propertyFilePath));
+	
+	try(BufferedReader reader = new BufferedReader(new FileReader(propertyFilePath))) {	    
 	    properties = new Properties();
 	    properties.load(reader);
 	    reader.close();
@@ -36,11 +37,11 @@ public class ConfigFileReader {
 
     public DriverType getBrowserType() {
 	String browser = properties.getProperty("browser");
-	if (browser == null || browser.equalsIgnoreCase("chrome"))
+	if (StringUtils.equalsIgnoreCase(browser, "chrome"))
 	    return DriverType.CHROME;
-	else if (browser == null || browser.equalsIgnoreCase("internetexplorer"))
+	else if (StringUtils.equalsIgnoreCase(browser, "internetexplorer"))
 	    return DriverType.INTERNETEXPLORER;
-	else if (browser == null || browser.equalsIgnoreCase("firefox"))
+	else if (StringUtils.equalsIgnoreCase(browser,"firefox"))
 	    return DriverType.FIREFOX;
 	else
 	    throw new RuntimeException("Driverpath not specified in the Config.properties file");
