@@ -26,7 +26,7 @@ public class BackgroundSteps {
 	this.context = context;
 	pageObjectManager = context.getPageObjectManager();
 	homepageObj = pageObjectManager.getHomePageObj();
-	Log.loadlog4j("log4j.xml");
+	Log.loadlog4j("resources/configuration/log4j.xml");
 	logger= Log.getLog(BackgroundSteps.class.getName());
     }
 
